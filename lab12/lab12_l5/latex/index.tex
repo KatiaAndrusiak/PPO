@@ -1,0 +1,48 @@
+~\newline
+~\newline
+ U\+W\+A\+GA\+: należy użyć doxygen aby wygenerować czytelną instrukcję (zawiera wzory) (aby wygenerować pdf należy w katalogu latex wydać komndę \textquotesingle{}make\textquotesingle{})~\newline
+
+
+Należy utworzyć brakujące pliki i napisać odpowiednie klasy, opisane niżej. Program musi się kompilować bez ostrzeżeń i poprawnie wykonywać, dając wynik podany w pliku output.\+txt. Najlepiej użyć komendy \textquotesingle{}diff $<$( ./exec ) output.\+txt )\textquotesingle{}
+
+Dodatkowe zastrzeżenia\+:~\newline
+a) Należy użyc C\+Make do przygotowania programu\+:~\newline
+ -- pliki źrodłowe muszą być w podkatalogu \textquotesingle{}src\textquotesingle{}~\newline
+ -- pliki nagłówkowe muszą być w podkatalogu \textquotesingle{}include\textquotesingle{}~\newline
+ -- kod musi się kompilować w nowym podkatalogu (np. \textquotesingle{}build\textquotesingle{}) poleceniem \textquotesingle{}cmake .. \&\& make\textquotesingle{} ~\newline
+b) program musi się kompilować z flagami \textquotesingle{}-\/\+Wall -\/g\textquotesingle{}, jako minimum.~\newline
+c) Jako rozwiązanie, proszę przeslać spakowany katalog źrodlowy, WŁĄ\+C\+Z\+A\+JĄC plik \hyperlink{main_8cpp}{main.\+cpp}, ale B\+EZ katalogu \textquotesingle{}build\textquotesingle{}. ~\newline
+d) Nie wolno modyfikować pliku \hyperlink{main_8cpp}{main.\+cpp}.~\newline
+e) Proszę nazwać program wykonywalny \textquotesingle{}exec\textquotesingle{}.~\newline
+
+
+
+
+
+
+$\ast$$\ast$$\ast$ Klasa \hyperlink{classPolynomial}{Polynomial} $\ast$$\ast$$\ast$
+
+Klasa implementuje wielomian zmiennej rzeczywistej określonego stopnia\+: \[ W_n(x) = a_1 + a_2 x + a_3 x^3 + \dots + a_n x^n \] Minimalne składniki klasy to\+:~\newline
+1) dynamiczna tablica współczynników wielomianu.~\newline
+ Współczynniki wielomianu $ a_1,\dots,a_n $ są typu double.~\newline
+2) Konstruktory, w tym kopiujący, przenoszący.~\newline
+ -- Jeden z konstruktorów tworzy wielomian podając stopień wielomianu oraz tablicę współczynników (przykład\+: patrz fcja main).~\newline
+ -- Jeden z konstruktorów tworzy wielomian o zadanym stopniu o tablicy współczynników inicjowanej zerami. ~\newline
+3) Operatory przypisania kopiującego, przenoszącego~\newline
+4) Operator () wyliczający wartość wielomianu dla zadanego argumentu (przykład\+: patrz fcja main)~\newline
+5) Operator += dodający wielomiany (przykład\+: patrz fcja main)~\newline
+6) Operator $\ast$ mnożący wielomian przez liczbę (przykład\+: patrz fcja main) 7) Operator $<$$<$ drukujący wielomian w formacie widocznym w pliku output.\+txt ~\newline
+~\newline
+
+
+
+
+$\ast$$\ast$$\ast$ Klasa Legendre $\ast$$\ast$$\ast$
+
+Klasa pochodna klasy Legendre. Implementuje wielomiany Legendre\textquotesingle{}a.~\newline
+Wielomiany Legendre\textquotesingle{}a są rozwiązaniami pewnego równania różniczkowego, i są szeroko stosowane w fizyce i informatyce. ~\newline
+Klasa powinna posisadać\+:~\newline
+1) metodę obliczającą współczynniki wielomianu Legendre\textquotesingle{}a Współczynnik $ a_l $ wielomianu stopnia $ n $ można otrzymać z następującego bezpośredniego wzoru\+: \[ a_l = \frac{(-1)^{\frac{n-l}{2}}}{2^n} \frac{ (n+l)! } { (\frac{n-l}{2})! (\frac{n+l}{2})! l! } , \] gdzie $ l=0,2,4,\dots $ jeśli $ n $ -\/parzyste oraz $ l=1,3,5,\dots $ jeśli $ n $ -\/nieparzyste. Jako silni można użyć funkcji std\+::tgamma, n! = std\+::tgamma(n+1).~\newline
+2) Konstruktory, w tym kopiujący, przenoszący~\newline
+ Jeden z konstruktorów ma tworzyć wielomian Legendre\textquotesingle{}a o zadanym stopniu.~\newline
+3) Operatory przypisania kopiującego, przenoszącego. 

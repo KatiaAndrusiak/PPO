@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall  -rdynamic CMakeFiles/map.dir/main.cpp.o CMakeFiles/map.dir/src/book.cpp.o CMakeFiles/map.dir/src/library.cpp.o  -o map 

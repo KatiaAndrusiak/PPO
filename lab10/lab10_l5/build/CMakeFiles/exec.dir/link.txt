@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall  -rdynamic CMakeFiles/exec.dir/main.cpp.o CMakeFiles/exec.dir/src/book.cpp.o CMakeFiles/exec.dir/src/library.cpp.o  -o exec libMyLibrary.a 

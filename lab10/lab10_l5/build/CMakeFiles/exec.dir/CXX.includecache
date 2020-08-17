@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/book.h
+iostream
+-
+
+../include/library.h
+iostream
+-
+book.h
+../include/book.h
+
+/home/katya/PPO/lab10/lab10_l5/main.cpp
+iostream
+-
+fstream
+-
+book.h
+/home/katya/PPO/lab10/lab10_l5/book.h
+library.h
+/home/katya/PPO/lab10/lab10_l5/library.h
+
+/home/katya/PPO/lab10/lab10_l5/src/book.cpp
+book.h
+/home/katya/PPO/lab10/lab10_l5/src/book.h
+
+/home/katya/PPO/lab10/lab10_l5/src/library.cpp
+iostream
+-
+library.h
+/home/katya/PPO/lab10/lab10_l5/src/library.h
+book.h
+/home/katya/PPO/lab10/lab10_l5/src/book.h
+
